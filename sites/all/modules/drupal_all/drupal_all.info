@@ -1,0 +1,12 @@
+name = Drupal_all
+core = 7.x
+package = Features
+dependencies[] = features
+dependencies[] = views
+dependencies[] = views_load_more
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[user_role][] = Contractor
+features[user_role][] = Employer
+features[views_view][] = flagged_content
+features_exclude[dependencies][ctools] = ctools
