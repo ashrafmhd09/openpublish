@@ -1,0 +1,23 @@
+<?php
+
+function zebra_image_block_info() {
+  $block = array();
+
+  $block['zebra_image'] = array(
+    'info' => 'Zebra Image',
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+
+  return $block;
+}
+
+function zebra_image_block_view($delta='') {
+  $block = array();
+
+  if ($delta === 'zebra_image') {
+    $image = new Zebra_Image();
+    dpm($image);
+  }
+
+  return $block;
+}

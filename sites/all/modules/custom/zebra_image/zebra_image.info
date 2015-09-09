@@ -1,0 +1,5 @@
+name = Zebra Image
+core = 7.x
+package = Image 
+
+files[] = libraries/Zebra_Image/Zebra_Image.php
