@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Installation functions for ZebraImage module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function zebra_image_install() {
+  
+} 
