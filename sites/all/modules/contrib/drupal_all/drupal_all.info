@@ -1,9 +1,14 @@
 name = Drupal_all
 core = 7.x
 package = Features
+dependencies[] = context
 dependencies[] = features
+dependencies[] = search
 dependencies[] = views
 dependencies[] = views_load_more
+dependencies[] = zebra_image
+features[context][] = openpubilsh_home
+features[ctools][] = context:context:3
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[user_role][] = Contractor

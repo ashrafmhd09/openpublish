@@ -16,8 +16,25 @@ function zebra_image_block_view($delta='') {
 
   if ($delta === 'zebra_image') {
     $image = new Zebra_Image();
-    dpm($image);
+    // dpm($image);
   }
 
   return $block;
+}
+
+function zebra_image_image_toolkits() {
+  return array(
+    'zebra_image' => array(
+      'title' => t('Zebra Image'),
+      'available' => TRUE,
+    )
+  );
+}
+
+function image_zebra_image_settings() {
+  // $form = array();
+
+  // $form['zebra_image_quality'] = array(
+    
+  // );
 }

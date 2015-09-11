@@ -9,5 +9,44 @@
  * Implements hook_install().
  */
 function zebra_image_install() {
-  
+  //Setting up variables for further use.
+
+  $value = variable_get('imageapi_zebraimage_quality', NULL);
+  if (!empty($value)) {
+    variable_set('imageapi_zebraimage_quality', $value);
+  }
+  variable_del('imageapi_zebraimage_quality');
+
+  $value = variable_get('imageapi_zebraimage_chmod_value', NULL);
+  if (!empty($value)) {
+    variable_set('imageapi_zebraimage_chmod_value', $value);
+  }
+  variable_del('imageapi_zebraimage_chmod_value');
+
+  $value = variable_get('imageapi_zebraimage_enlarge_smaller_images', NULL);
+  if (!empty($value)) {
+    variable_set('imageapi_zebraimage_enlarge_smaller_images', $value);
+  }
+  variable_del('imageapi_zebraimage_enlarge_smaller_images');
+
+  $value = variable_get('imageapi_zebraimage_preserve_aspect_ratio', NULL);
+  if (!empty($value)) {
+    variable_set('imageapi_zebraimage_preserve_aspect_ratio', $value);
+  }
+  variable_del('imageapi_zebraimage_preserve_aspect_ratio');
+
+  $value = variable_get('imageapi_zebraimage_sharpen_images', NULL);
+  if (!empty($value)) {
+    variable_set('imageapi_zebraimage_sharpen_images', $value);
+  }
+  variable_del('imageapi_zebraimage_sharpen_images');
 } 
+
+function zebra_image_uninstall() {
+  variable_del('imageapi_zebraimage_quality');
+  variable_del('imageapi_zebraimage_sharpen_images');
+  variable_del('imageapi_zebraimage_chmod_value');
+  variable_del('imageapi_zebraimage_preserve_aspect_ratio');
+  variable_del('imageapi_zebraimage_enlarge_smaller_images');
+}
+

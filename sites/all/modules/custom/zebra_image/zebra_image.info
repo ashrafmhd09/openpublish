@@ -3,3 +3,4 @@ core = 7.x
 package = Image 
 
 files[] = libraries/Zebra_Image/Zebra_Image.php
+configure = admin/config/media/image-toolkit
