@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!-- Sorry no IE7 support! -->
+<!-- @see http://foundation.zurb.com/docs/index.html#basicHTMLMarkup -->
+
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" dir="ltr"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="ImageToolbar" content="false" />
+<meta name="viewport" content="width=device-width, maximum-scale = 1.0" />
+<link rel="shortcut icon" href="http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/themes/zurb_foundation/favicon.ico" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+  <title>Flagged Content | Drupal 7</title>
+  <style>
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/system/system.base.css?nuu4hi");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/system/system.messages.css?nuu4hi");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/system/system.theme.css?nuu4hi");
+</style>
+<style>
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/field/theme/field.css?nuu4hi");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/logintoboggan/logintoboggan.css?nuu4hi");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/node/node.css?nuu4hi");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/search/search.css?nuu4hi");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/user/user.css?nuu4hi");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/views/css/views.css?nuu4hi");
+</style>
+<style>
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/ctools/css/ctools.css?nuu4hi");
+</style>
+<style>
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/themes/zurb_foundation/css/foundation.min.css?nuu4hi");
+</style>
+  <script src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/jquery.js?v=1.4.4"></script>
+<script src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/jquery.once.js?v=1.2"></script>
+<script src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/drupal.js?nuu4hi"></script>
+<script src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/jquery.cookie.js?v=1.0"></script>
+<script src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/jquery.form.js?v=2.52"></script>
+<script src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/ajax.js?v=7.39"></script>
+<script src="http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/views_load_more/views_load_more.js?nuu4hi"></script>
+<script src="http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/views/js/base.js?nuu4hi"></script>
+<script src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/progress.js?v=7.39"></script>
+<script src="http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/views/js/ajax_view.js?nuu4hi"></script>
+<script src="http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/themes/zurb_foundation/js/vendor/custom.modernizr.js?nuu4hi"></script>
+<script src="http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/themes/zurb_foundation/js/foundation.min.js?nuu4hi"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"zurb_foundation","theme_token":"HSTzDWC1wAO223MhgDLmicHbQqO1EIAyRX7HVailZBQ","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/views_load_more\/views_load_more.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/all\/themes\/zurb_foundation\/js\/vendor\/custom.modernizr.js":1,"sites\/all\/themes\/zurb_foundation\/js\/foundation.min.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/themes\/zurb_foundation\/css\/normalize.css":1,"sites\/all\/themes\/zurb_foundation\/css\/foundation.min.css":1}},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:f3389aea75ccc2a523d6e5dedf4ff3d3":{"view_name":"flagged_content","view_display_id":"page_1","view_args":"","view_path":"home","view_base_path":"home","view_dom_id":"f3389aea75ccc2a523d6e5dedf4ff3d3","pager_element":0}}},"urlIsAjaxTrusted":{"\/home?destination=home":true}});</script>
+  <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body class="html front not-logged-in one-sidebar sidebar-first page-home views-page" >
+  <div class="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <!--.page -->
+<div role="document" class="page">
+
+  <!--.l-header region -->
+  <header role="banner" class="l-header">
+
+          <!--.top-bar -->
+              <nav class="top-bar" data-options="">
+          <ul class="title-area">
+            <li class="name"><h1><a href="/" rel="home" title="Drupal 7 Home" class="active">Drupal 7</a></h1></li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
+          <section class="top-bar-section">
+                                  </section>
+        </nav>
+            <!--/.top-bar -->
+    
+    <!-- Title, slogan and menu -->
+        <!-- End title, slogan and menu -->
+
+    
+  </header>
+  <!--/.l-header -->
+
+  
+  
+  
+  <main role="main" class="row l-main">
+    <div class="large-9 push-3 main columns">
+      
+      <a id="main-content"></a>
+
+      
+      
+                            
+      
+        
+      
+      <div class="view view-flagged-content view-id-flagged_content view-display-id-page_1 view-dom-id-f3389aea75ccc2a523d6e5dedf4ff3d3">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+    <article id="node-200" class="node node-job node-promoted node-teaser">
+
+              <h2 class="node-title"><a href="/content/probo">Probo</a></h2>
+        
+      <div class="posted">
+            Submitted by <span class="username">Anonymous (not verified)</span> on Thu, 08/27/2015 - 09:20    </div>
+  
+  <div class="field field-name-body field-type-text-with-summary field-label-hidden field-wrapper body text-secondary"><p>Autem dignissim immitto interdico minim praesent quae tincidunt ullamcorper verto. Aptent bene defui ex populus vicis ymo. Genitus gilvus si. Comis distineo ea luptatum paulatim. Cogo cui luptatum zelus. Camur jus olim ulciscor. Quia suscipere vero. Acsi natu persto saepius sed suscipit tego tum zelus. Damnum defui in incassum macto meus quae sed utinam wisi. Adipiscing damnum eros immitto quia quis.</p></div>
+  
+  <ul class="links inline"><li class="node-readmore first last"><a href="/content/probo" rel="tag" title="Probo">Read more<span class="element-invisible"> about Probo</span></a></li>
+</ul>  
+</article>
+  </div>
+  <div class="views-row views-row-2 views-row-even">
+    <article id="node-198" class="node node-job node-teaser">
+
+              <h2 class="node-title"><a href="/content/abluo-illum-tation-tincidunt-vero">Abluo Illum In Tation Tincidunt Vero</a></h2>
+        
+      <div class="posted">
+            Submitted by <span class="username">Anonymous (not verified)</span> on Thu, 08/27/2015 - 09:20    </div>
+  
+  <div class="field field-name-body field-type-text-with-summary field-label-hidden field-wrapper body text-secondary"><p>Adipiscing gemino macto. Aliquip capto pagus paulatim quae rusticus sagaciter sed. Caecus gemino hendrerit imputo minim olim roto saluto utrum venio. Capto natu sed.</p>
+<p>Abbas abluo bene ea facilisis iusto iustum meus pagus. Os patria quia. Abdo abigo proprius quis. Laoreet natu olim pagus. Facilisis metuo quibus turpis vereor.</p></div>
+  
+  <ul class="links inline"><li class="node-readmore first last"><a href="/content/abluo-illum-tation-tincidunt-vero" rel="tag" title="Abluo Illum In Tation Tincidunt Vero">Read more<span class="element-invisible"> about Abluo Illum In Tation Tincidunt Vero</span></a></li>
+</ul>  
+</article>
+  </div>
+  <div class="views-row views-row-3 views-row-odd">
+    <article id="node-197" class="node node-job node-promoted node-teaser">
+
+              <h2 class="node-title"><a href="/content/feugiat-letalis-nimis-secundum">Feugiat Letalis Nimis Secundum</a></h2>
+        
+      <div class="posted">
+            Submitted by <span class="username">Anonymous (not verified)</span> on Thu, 08/27/2015 - 09:20    </div>
+  
+  <div class="field field-name-body field-type-text-with-summary field-label-hidden field-wrapper body text-secondary"><p>Blandit magna natu populus verto volutpat. Conventio eligo hos neo. Duis macto paulatim velit vicis. Abdo huic meus mos obruo populus quia secundum ullamcorper. Distineo feugiat neque quae rusticus valetudo. Esca imputo pertineo si. At defui elit enim erat incassum pecus praesent singularis. Hos proprius quadrum uxor. Cogo lucidus minim os venio. Capto consequat humo qui.</p></div>
+  
+  <ul class="links inline"><li class="node-readmore first last"><a href="/content/feugiat-letalis-nimis-secundum" rel="tag" title="Feugiat Letalis Nimis Secundum">Read more<span class="element-invisible"> about Feugiat Letalis Nimis Secundum</span></a></li>
+</ul>  
+</article>
+  </div>
+  <div class="views-row views-row-4 views-row-even">
+    <article id="node-196" class="node node-job node-teaser">
+
+              <h2 class="node-title"><a href="/content/consequat-similis">Consequat Similis</a></h2>
+        
+      <div class="posted">
+            Submitted by <span class="username">Anonymous (not verified)</span> on Thu, 08/27/2015 - 09:20    </div>
+  
+  <div class="field field-name-body field-type-text-with-summary field-label-hidden field-wrapper body text-secondary"><p>Causa et ullamcorper vulpes. Abico at camur. Commoveo consectetuer fere minim valde valetudo ymo. Aliquam quae utrum. Ludus nisl paratus probo valetudo. Abigo accumsan autem commoveo metuo natu nostrud quae vel. Decet duis esse et hos pertineo tincidunt usitas valetudo virtus.</p>
+<p>Accumsan jumentum saluto tego utinam. Acsi exputo jus lobortis persto veniam wisi.</p>
+<p>Adipiscing consequat olim quidne tamen venio wisi. Camur nobis quadrum qui validus venio vulpes. Dolor importunus in quis validus.</p>
+</div>
+  
+  <ul class="links inline"><li class="node-readmore first last"><a href="/content/consequat-similis" rel="tag" title="Consequat Similis">Read more<span class="element-invisible"> about Consequat Similis</span></a></li>
+</ul>  
+</article>
+  </div>
+  <div class="views-row views-row-5 views-row-odd views-row-last">
+    <article id="node-193" class="node node-job node-teaser">
+
+              <h2 class="node-title"><a href="/content/eu">Eu</a></h2>
+        
+      <div class="posted">
+            Submitted by <span class="username">Anonymous (not verified)</span> on Thu, 08/27/2015 - 09:20    </div>
+  
+  <div class="field field-name-body field-type-text-with-summary field-label-hidden field-wrapper body text-secondary"><p>Abbas conventio lenis metuo molior nutus torqueo. Aliquip commodo decet defui duis inhibeo nostrud os ullamcorper.</p>
+<p>Abbas immitto luptatum nibh oppeto saluto si utinam. Autem capto consectetuer ibidem melior paratus pneum venio vereor. Accumsan eum metuo quidne uxor vicis. Autem blandit incassum refoveo vel. Bene caecus consequat dolor neque nibh pagus similis utinam wisi. Abluo aptent fere letalis ratis velit. Abico humo mauris zelus. At eum importunus nunc roto. Abbas amet exerci gemino saepius sino ymo.</p></div>
+  
+  <ul class="links inline"><li class="node-readmore first last"><a href="/content/eu" rel="tag" title="Eu">Read more<span class="element-invisible"> about Eu</span></a></li>
+</ul>  
+</article>
+  </div>
+    </div>
+  
+      <div class="item-list"><ul class="pager pager-load-more"><li class="pager-next first last"><a href="/home?page=1">Load more</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div>  
+    </div>
+    <!--/.main region -->
+
+          <aside role="complementary" class="large-3 pull-9 sidebar-first columns sidebar">
+            <section class="block block-node block-node-recent clearfix">
+
+        <h2 class="block-title">Recent content</h2>
+    
+      <table>
+<tbody>
+ <tr class="odd"><td class="title-author"><div class="node-title"><a href="/content/ideo-occuro">Ideo Occuro</a></div><div class="node-author"><span class="username">amohammad</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="even"><td class="title-author"><div class="node-title"><a href="/content/haero">Haero</a></div><div class="node-author"><span class="username">amohammad</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="odd"><td class="title-author"><div class="node-title"><a href="/content/probo">Probo</a></div><div class="node-author"><span class="username">Anonymous (not verified)</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="even"><td class="title-author"><div class="node-title"><a href="/content/macto-minim-tincidunt">Macto Minim Tincidunt</a></div><div class="node-author"><span class="username">contractor</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="odd"><td class="title-author"><div class="node-title"><a href="/content/abluo-illum-tation-tincidunt-vero">Abluo Illum In Tation Tincidunt Vero</a></div><div class="node-author"><span class="username">Anonymous (not verified)</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="even"><td class="title-author"><div class="node-title"><a href="/content/feugiat-letalis-nimis-secundum">Feugiat Letalis Nimis Secundum</a></div><div class="node-author"><span class="username">Anonymous (not verified)</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="odd"><td class="title-author"><div class="node-title"><a href="/content/consequat-similis">Consequat Similis</a></div><div class="node-author"><span class="username">Anonymous (not verified)</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="even"><td class="title-author"><div class="node-title"><a href="/content/aliquam-praesent-velit">Aliquam Praesent Velit</a></div><div class="node-author"><span class="username">admin</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="odd"><td class="title-author"><div class="node-title"><a href="/content/acsi-capto-exputo-gilvus-nimis-pecus">Acsi Capto Exputo Gilvus Nimis Pecus</a></div><div class="node-author"><span class="username">amohammad</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="even"><td class="title-author"><div class="node-title"><a href="/content/eu">Eu</a></div><div class="node-author"><span class="username">Anonymous (not verified)</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+</tbody>
+</table>
+  
+</section>  <section class="block block-user block-user-login clearfix">
+
+        <h2 class="block-title">User login</h2>
+    
+      <form action="/home?destination=home" method="post" id="user-login-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">Username or e-mail <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" id="edit-name" name="name" value="" size="15" maxlength="60" class="form-text required" />
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
+ <input type="password" id="edit-pass" name="pass" size="15" maxlength="128" class="form-text required" />
+</div>
+<div class="item-list"><ul><li class="first"><a href="/user/register" title="Create a new user account.">Create new account</a></li>
+<li class="last"><a href="/user/password" title="Request new password via e-mail.">Request new password</a></li>
+</ul></div><input type="hidden" name="form_build_id" value="form-qYRbs6FQNr1VXDKQUcRz6bCaS9yBU6LHZ0pMECUyVrw" />
+<input type="hidden" name="form_id" value="user_login_block" />
+<button class="secondary button radius form-submit" id="edit-submit" name="op" value="Log in" type="submit">Log in</button>
+</div></form>  
+</section>      </aside>
+    
+      </main>
+  <!--/.main-->
+
+  
+  
+  <!--.l-footer-->
+  <footer class="l-footer panel row" role="contentinfo">
+    
+          <div class="copyright large-12 columns">
+        &copy; 2015 Drupal 7 All rights reserved.      </div>
+      </footer>
+  <!--/.footer-->
+
+  </div>
+<!--/.page -->
+      <script>
+    (function ($, Drupal, window, document, undefined) {
+      $(document).foundation();
+    })(jQuery, Drupal, this, this.document);
+  </script>
+</body>
+</html>
+
+<!-- Page cached by Boost @ 2015-09-17 15:06:12, expires @ 2015-09-17 16:06:12, lifetime 1 hour -->
