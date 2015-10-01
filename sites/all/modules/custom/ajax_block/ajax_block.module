@@ -1,0 +1,41 @@
+<?php
+
+function ajax_block_menu() {
+  $items = array();
+
+  $items['ajax/404'] = array(
+    'page callback' => 'ajax_block_callback',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+function ajax_block_callback() {
+  $view = NULL;
+  $view = views_get_view('views_relationships');
+  $view->set_display('block');
+  $view->execute();
+  
+  $settings = array(
+    'views' => array(
+      'ajax_path' => url('/views/ajax'),
+      'ajaxViews' => array(
+        array(
+          'view_name' => $view->name,
+          'view_display_id' => $view->current_display,
+          'view_args' => check_plain($_GET['q']),
+          'view_path' => check_plain($_GET['q']),
+          'views_dom_id' => $view->get_path(),
+          'view_content' => $view->render()
+        ),
+      ),
+    ),
+  );
+  // drupal_add_js(array('ajax_block' => $settings), 'setting');
+  // drupal_add_js(drupal_get_path('module','uva_today_blocks') . '/js/ajax_block.js');
+  drupal_json_output($settings);
+
+  // return $settings;
+}

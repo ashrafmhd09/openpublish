@@ -1,0 +1,155 @@
+diff --git a/token.module b/token.module
+index b683c70..cdb9555 100644
+--- a/token.module
++++ b/token.module
+@@ -271,10 +271,148 @@ function token_form_block_admin_configure_alter(&$form, $form_state) {
+
+ /**
+  * Implements hook_widget_form_alter().
++ *
++ * Replaces tokens in field descriptions of primarily single-value'd instances.
+  */
+ function token_field_widget_form_alter(&$element, &$form_state, $context) {
+-  if (!empty($element['#description']) && !empty($context['instance']['description'])) {
+-    $element['#description'] = filter_xss_admin(token_replace($context['instance']['description']));
++  if (empty($context['instance']['description'])) {
++    return;
++  }
++  $original_description = $context['instance']['description'];
++
++  // Avoid expensive regular expression checks in token_scan() and
++  // field_filter_xss()/filter_xss() - and at lot of other work - if
++  // unnecessary (no square bracket: no tokens).
++  if (strpos(' ' . $original_description, '[')) {
++    $modified_description = field_filter_xss(token_replace($original_description));
++
++    // Do we need to work at all?
++    if ($modified_description != $original_description) {
++
++      // Find the description(s):
++      $field_type = $context['field']['type'];
++
++      // File fields are pretty non-standard.
++      $file_cardinality_single = FALSE;
++
++      // Find the $element array(s) listing description.
++      // Use safer array_key_exists() instead of empty(); form arrays come in
++      // many shapes and sizes.
++      if (array_key_exists('value', $element) && array_key_exists('#description', $element['value'])) {
++        // text and number_ fields have a #description in a value bucket.
++        // Their single row instances' ['value']['#description'] is non-empty
++        // (and that one is used in widget rendering), whereas any/multiple
++        // rows instances' ['value']['#description'] is empty.
++        $props =& $element['value'];
++        // text and number_ fields single row instances got #description in
++        // root too; it's usually not used but let's play it safe.
++        if (array_key_exists('#description', $element)) {
++          $element['#description'] = $modified_description;
++        }
++      }
++      elseif (array_key_exists('#description', $element)) {
++        // list_ types.
++        $props =& $element;
++      }
++      elseif (array_key_exists(0, $element) && array_key_exists('#description', $element[0])) {
++        // Single instance file has no props in $element root.
++        $file_cardinality_single = TRUE;
++        $props =& $element[0];
++      }
++      else {
++        // Unsupported element structure.
++        return;
++      }
++
++      switch ($field_type) {
++        case 'file':
++        case 'image':
++          // Multi instance file fields have description on instances as well
++          // as the overall field.
++          if (!$file_cardinality_single) {
++            $limit = 100;
++            for ($i = 0; $i < $limit; ++$i) {
++              if (!empty($element[$i]) && array_key_exists('#description', $element[$i])) {
++                $element[$i]['#description'] = $modified_description;
++              }
++              else {
++                break;
++              }
++            }
++          }
++          // Single instance (cardinality:1) file fields' #description get
++          // file size and extensions info appended prior to this phase.
++          elseif (!empty($props['#description']) && strpos($props['#description'], '<br')) {
++            $a = explode('<br', $props['#description']);
++            $a[0] = $modified_description;
++            $props['#description'] = join('<br', $a);
++
++            // Done with this one, get out before generic assignment.
++            return;
++          }
++          break;
++      }
++
++      $props['#description'] = $modified_description;
++    }
++  }
++}
++
++/**
++ * Implements hook_preprocess_HOOK().
++ * Implements hook_preprocess_field_multiple_value_form().
++ *
++ * Replaces tokens in field descriptions of multi-value'd instances.
++ */
++function token_preprocess_field_multiple_value_form(&$variables) {
++  // Avoid expensive regular expression checks in token_scan() and
++  // field_filter_xss()/filter_xss() - and at lot of other work - if
++  // unnecessary (no square bracket: no tokens).
++  if (!empty($variables['element']['#description']) && strpos(' ' . $variables['element']['#description'], '[')) {
++
++    // Get unfiltered description from field_info_instance().
++    // Thus we need to establish field name, entity type and bundle.
++    if (!empty($variables['element'][0])) {
++      $element =& $variables['element'];
++
++      if (!empty($element['#field_name'])) {
++        $field_name = $element['#field_name'];
++
++        if (!empty($element[0]['#entity_type']) && !empty($element[0]['#bundle']) ) {
++          $entity_type = $element[0]['#entity_type'];
++          $bundle = $element[0]['#bundle'];
++        }
++        // Number fields haven't got entity type and bundle on
++        // $variables['element'][0].
++        elseif (!empty($element[0]['value']['#entity_type']) && !empty($element[0]['value']['#bundle'])) {
++          $entity_type = $element[0]['value']['#entity_type'];
++          $bundle = $element[0]['value']['#bundle'];
++        }
++        // Unsupported field type.
++        else {
++
++          return;
++        }
++
++        // field_collection_item always reports itself as bundle.
++        if ($bundle == $field_name) {
++          if (!empty($variables['element']['#field_parents'][0])) {
++            $bundle = $variables['element']['#field_parents'][0];
++          }
++          // field_collection_item will also reports it's parent as itself
++          // when attached directly to entity/node (not nested in another
++          // field collection).
++          if ($bundle == $field_name) {
++
++            return;
++          }
++        }
++        $instance_info = field_info_instance($entity_type, $field_name, $bundle);
++        if ($instance_info && !empty($instance_info['description'])) {
++          $element['#description'] = field_filter_xss(token_replace($instance_info['description']));
++        }
++      }
++    }
+   }
+ }
+ --

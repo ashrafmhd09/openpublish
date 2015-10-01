@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function token_text_field_widget_form_alter(&$element, &$form_state, $context)
+{
+    if (!isset($element['#type']) && function_exists('token_field_widget_form_alter')) {
+        _token_text_field_widget_form_nested_apply_tokens($element, $form_state, $context);
+    }
+}
+
+function _token_text_field_widget_form_nested_apply_tokens(&$element, &$form_state, $context) {
+    if (isset($element['#type'])) {
+        token_feld_widget_form_alter($element, $form_state, $context);
+        return;
+    }
+    foreach(element_children($element) as $key) {
+        _token_text_field_widget_form_nested_apply_tokens($element[$key], $form_state, $context);
+    }
+}

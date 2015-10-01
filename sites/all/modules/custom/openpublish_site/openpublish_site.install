@@ -1,0 +1,9 @@
+<?php
+
+function openpublish_site_install() {
+    openpublish_site_update_7001();
+}
+
+function openpublish_site_update_7001() {
+    module_enable(array('token_text'));
+}
