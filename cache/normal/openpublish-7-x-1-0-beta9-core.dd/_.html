@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+  <title>Flagged Content | Drupal 7</title>
+  <style type="text/css" media="all">
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/system/system.base.css?nvjzsu");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/system/system.menus.css?nvjzsu");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/system/system.messages.css?nvjzsu");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/system/system.theme.css?nvjzsu");
+</style>
+<style type="text/css" media="all">
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/field/theme/field.css?nvjzsu");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/logintoboggan/logintoboggan.css?nvjzsu");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/node/node.css?nvjzsu");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/search/search.css?nvjzsu");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/modules/user/user.css?nvjzsu");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/views/css/views.css?nvjzsu");
+</style>
+<style type="text/css" media="all">
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/ctools/css/ctools.css?nvjzsu");
+</style>
+<style type="text/css" media="all">
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/themes/bartik/css/layout.css?nvjzsu");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/themes/bartik/css/style.css?nvjzsu");
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/themes/bartik/css/colors.css?nvjzsu");
+</style>
+<style type="text/css" media="print">
+@import url("http://openpublish-7-x-1-0-beta9-core.dd:8083/themes/bartik/css/print.css?nvjzsu");
+</style>
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="http://openpublish-7-x-1-0-beta9-core.dd:8083/themes/bartik/css/ie.css?nvjzsu" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="http://openpublish-7-x-1-0-beta9-core.dd:8083/themes/bartik/css/ie6.css?nvjzsu" media="all" />
+<![endif]-->
+  <script type="text/javascript" src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/drupal.js?nvjzsu"></script>
+<script type="text/javascript" src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/ajax.js?v=7.39"></script>
+<script type="text/javascript" src="http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/views_load_more/views_load_more.js?nvjzsu"></script>
+<script type="text/javascript" src="http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/views/js/base.js?nvjzsu"></script>
+<script type="text/javascript" src="http://openpublish-7-x-1-0-beta9-core.dd:8083/misc/progress.js?v=7.39"></script>
+<script type="text/javascript" src="http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/views/js/ajax_view.js?nvjzsu"></script>
+<script type="text/javascript" src="http://openpublish-7-x-1-0-beta9-core.dd:8083/sites/all/modules/contrib/google_analytics/googleanalytics.debug.js?nvjzsu"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics_debug.js","ga");ga("create", "UA-67768844-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bartik","theme_token":"dBo8gXOw-BtCzJxDz3xR6HVZ-kYVTDNogE5olaAjmck","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/views_load_more\/views_load_more.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.debug.js":1,"0":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"themes\/bartik\/css\/layout.css":1,"themes\/bartik\/css\/style.css":1,"themes\/bartik\/css\/colors.css":1,"themes\/bartik\/css\/print.css":1,"themes\/bartik\/css\/ie.css":1,"themes\/bartik\/css\/ie6.css":1}},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:3779684625b41e7d168a31ac706cef18":{"view_name":"flagged_content","view_display_id":"page_1","view_args":"","view_path":"home","view_base_path":"home","view_dom_id":"3779684625b41e7d168a31ac706cef18","pager_element":0}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/home?destination=home":true}});
+//--><!]]>
+</script>
+</head>
+<body class="html front not-logged-in one-sidebar sidebar-first page-home" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper"><div id="page">
+
+  <div id="header" class="without-secondary-menu"><div class="section clearfix">
+
+          <a href="/" title="Home" rel="home" id="logo">
+        <img src="http://openpublish-7-x-1-0-beta9-core.dd:8083/themes/bartik/logo.png" alt="Home" />
+      </a>
+    
+          <div id="name-and-slogan">
+
+                              <div id="site-name">
+              <strong>
+                <a href="/" title="Home" rel="home"><span>Drupal 7</span></a>
+              </strong>
+            </div>
+                  
+        
+      </div> <!-- /#name-and-slogan -->
+    
+    
+          <div id="main-menu" class="navigation">
+        <h2 class="element-invisible">Main menu</h2><ul id="main-menu-links" class="links clearfix"><li class="menu-554 first active"><a href="/" title="" class="active">Home</a></li>
+<li class="menu-556"><a href="/content/haero" title="">Haero</a></li>
+<li class="menu-557 last"><a href="/content/probo" title="">Probo</a></li>
+</ul>      </div> <!-- /#main-menu -->
+    
+    
+  </div></div> <!-- /.section, /#header -->
+
+  
+  
+  <div id="main-wrapper" class="clearfix"><div id="main" class="clearfix">
+
+    
+          <div id="sidebar-first" class="column sidebar"><div class="section">
+          <div class="region region-sidebar-first">
+    <div id="block-node-recent" class="block block-node">
+
+    <h2>Recent content</h2>
+  
+  <div class="content">
+    <table>
+<tbody>
+ <tr class="odd"><td class="title-author"><div class="node-title"><a href="/node/233">asdfa</a></div><div class="node-author"><span class="username">admin</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="even"><td class="title-author"><div class="node-title"><a href="/node/232">Bene Dolus Gilvus Ullamcorper</a></div><div class="node-author"><span class="username">admin</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="odd"><td class="title-author"><div class="node-title"><a href="/content/abigo-blandit-conventio-meus-quia-vulputate">Abigo Blandit Conventio Meus Quia Vulputate</a></div><div class="node-author"><span class="username">amohammad</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="even"><td class="title-author"><div class="node-title"><a href="/node/225">Appellatio Pneum</a></div><div class="node-author"><span class="username">admin</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="odd"><td class="title-author"><div class="node-title"><a href="/node/223">Ibidem Incassum Jumentum Qui Valetudo</a></div><div class="node-author"><span class="username">Anonymous (not verified)</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="even"><td class="title-author"><div class="node-title"><a href="/node/227">Autem Enim Molior</a></div><div class="node-author"><span class="username">Anonymous (not verified)</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="odd"><td class="title-author"><div class="node-title"><a href="/node/226">Dolus Tamen Typicus</a></div><div class="node-author"><span class="username">Anonymous (not verified)</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="even"><td class="title-author"><div class="node-title"><a href="/node/228">Brevitas Decet Luptatum</a></div><div class="node-author"><span class="username">Anonymous (not verified)</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="odd"><td class="title-author"><div class="node-title"><a href="/node/229">Facilisis Virtus</a></div><div class="node-author"><span class="username">Anonymous (not verified)</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+ <tr class="even"><td class="title-author"><div class="node-title"><a href="/node/230">Praemitto</a></div><div class="node-author"><span class="username">contractor</span></div></td><td class="edit"></td><td class="delete"></td> </tr>
+</tbody>
+</table>
+  </div>
+</div>
+<div id="block-user-login" class="block block-user">
+
+    <h2>User login</h2>
+  
+  <div class="content">
+    <form action="/home?destination=home" method="post" id="user-login-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name--2">Username or e-mail <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" id="edit-name--2" name="name" value="" size="15" maxlength="60" class="form-text required" />
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label for="edit-pass--2">Password <span class="form-required" title="This field is required.">*</span></label>
+ <input type="password" id="edit-pass--2" name="pass" size="15" maxlength="128" class="form-text required" />
+</div>
+<div class="item-list"><ul><li class="first"><a href="/user/register" title="Create a new user account.">Create new account</a></li>
+<li class="last"><a href="/user/password" title="Request new password via e-mail.">Request new password</a></li>
+</ul></div><input type="hidden" name="form_build_id" value="form-7N2zcYptuoFmxAFVa7jLoThZIQXazeWRCfQ0g7l4lnI" />
+<input type="hidden" name="form_id" value="user_login_block" />
+<div class="form-actions form-wrapper" id="edit-actions--2"><input type="submit" id="edit-submit--2" name="op" value="Log in" class="form-submit" /></div></div></form>  </div>
+</div>
+<div id="block-system-navigation" class="block block-system block-menu">
+
+    <h2>Navigation</h2>
+  
+  <div class="content">
+    <ul class="menu clearfix"><li class="first leaf"><a href="/youtube-api/store-token"></a></li>
+<li class="last leaf"><a href="/examples/simpletest_example" title="Explain the simpletest example and allow the error logic to be executed.">Simpletest Example</a></li>
+</ul>  </div>
+</div>
+  </div>
+      </div></div> <!-- /.section, /#sidebar-first -->
+    
+    <div id="content" class="column"><div class="section">
+      <div id="highlighted">  <div class="region region-highlighted">
+    <div id="block-system-main-menu" class="block block-system block-menu">
+
+    <h2>Main menu</h2>
+  
+  <div class="content">
+    <ul class="menu clearfix"><li class="first leaf"><a href="/" title="" class="active">Home</a></li>
+<li class="leaf"><a href="/content/haero" title="">Haero</a></li>
+<li class="last leaf"><a href="/content/probo" title="">Probo</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>      <a id="main-content"></a>
+                    <h1 class="title" id="page-title">
+          Flagged Content        </h1>
+                          <div class="tabs">
+                  </div>
+                          <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div class="view view-flagged-content view-id-flagged_content view-display-id-page_1 view-dom-id-3779684625b41e7d168a31ac706cef18">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+    <div id="node-229" class="node node-news node-teaser clearfix">
+
+        <h2>
+      <a href="/node/229">Facilisis Virtus</a>
+    </h2>
+    
+      <div class="meta submitted">
+            Submitted by <span class="username">Anonymous (not verified)</span> on Tue, 09/29/2015 - 11:03    </div>
+  
+  <div class="content clearfix">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Cui ideo immitto nostrud nutus saepius si ulciscor. Abluo causa comis exerci mauris natu nobis obruo suscipere tego. Antehabeo comis commodo imputo quadrum vero. Eum ideo luptatum nobis quadrum roto vel vicis. Commoveo nobis quidem vulpes. Damnum elit exerci utrum volutpat vulputate. Blandit consequat scisco tation. Distineo elit gravis nulla refero saluto valetudo wisi.</p></div></div></div>  </div>
+
+      <div class="link-wrapper">
+      <ul class="links inline"><li class="node-readmore first last"><a href="/node/229" rel="tag" title="Facilisis Virtus">Read more<span class="element-invisible"> about Facilisis Virtus</span></a></li>
+</ul>    </div>
+  
+  
+</div>
+  </div>
+  <div class="views-row views-row-2 views-row-even">
+    <div id="node-228" class="node node-news node-promoted node-teaser clearfix">
+
+        <h2>
+      <a href="/node/228">Brevitas Decet Luptatum</a>
+    </h2>
+    
+      <div class="meta submitted">
+            Submitted by <span class="username">Anonymous (not verified)</span> on Tue, 09/29/2015 - 11:03    </div>
+  
+  <div class="content clearfix">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Appellatio eum scisco suscipit. Antehabeo dolus elit gemino ideo mos obruo sudo suscipere typicus.</p>
+<p>Dolor humo ut. Defui quidem scisco zelus. Camur duis et iaceo luctus plaga qui quidem validus zelus.</p>
+<p>Exerci feugiat iusto loquor lucidus luptatum quibus tincidunt tum. Adipiscing commodo consequat dolor gilvus jus persto proprius sit usitas. Capto ille lucidus metuo os utrum vereor vero. Jugis ludus premo tamen tum utinam. Abico abluo esca wisi. Abluo capto commodo facilisis gilvus minim pecus secundum singularis ymo.</p></div></div></div>  </div>
+
+      <div class="link-wrapper">
+      <ul class="links inline"><li class="node-readmore first last"><a href="/node/228" rel="tag" title="Brevitas Decet Luptatum">Read more<span class="element-invisible"> about Brevitas Decet Luptatum</span></a></li>
+</ul>    </div>
+  
+  
+</div>
+  </div>
+  <div class="views-row views-row-3 views-row-odd">
+    <div id="node-227" class="node node-news node-promoted node-teaser clearfix">
+
+        <h2>
+      <a href="/node/227">Autem Enim Molior</a>
+    </h2>
+    
+      <div class="meta submitted">
+            Submitted by <span class="username">Anonymous (not verified)</span> on Tue, 09/29/2015 - 11:03    </div>
+  
+  <div class="content clearfix">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Natu patria torqueo. Commodo decet macto similis tego uxor valde volutpat. Abigo ideo jugis lenis nutus paratus. Incassum quibus utrum.</p>
+<p>Camur capto gemino ibidem modo quidne refoveo. Decet dolor facilisi gravis incassum iusto. Commodo exerci ludus vereor vicis. Decet eros fere hendrerit iusto scisco similis torqueo virtus.</p>
+<p>Enim gemino huic olim persto refero saluto turpis valde. Antehabeo eu humo interdico magna quis.</p></div></div></div>  </div>
+
+      <div class="link-wrapper">
+      <ul class="links inline"><li class="node-readmore first last"><a href="/node/227" rel="tag" title="Autem Enim Molior">Read more<span class="element-invisible"> about Autem Enim Molior</span></a></li>
+</ul>    </div>
+  
+  
+</div>
+  </div>
+  <div class="views-row views-row-4 views-row-even">
+    <div id="node-226" class="node node-news node-promoted node-teaser clearfix">
+
+        <h2>
+      <a href="/node/226">Dolus Tamen Typicus</a>
+    </h2>
+    
+      <div class="meta submitted">
+            Submitted by <span class="username">Anonymous (not verified)</span> on Tue, 09/29/2015 - 11:03    </div>
+  
+  <div class="content clearfix">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Caecus conventio jus nisl occuro probo ratis vereor vulputate. Aliquam bene damnum eum rusticus vel. Augue consequat meus nimis pertineo typicus. Abbas genitus quis saepius scisco. Causa feugiat importunus macto ut. Ibidem lenis qui tation vel. Abbas causa conventio lobortis nulla praesent sino tation volutpat.</p>
+<p>Brevitas cui facilisis modo pagus paratus quidem sed. Aptent enim imputo luctus patria valetudo virtus. Abigo bene causa comis diam lobortis meus turpis. In nostrud oppeto validus. Adipiscing commodo et odio pertineo. Abico abigo at lenis luptatum refero.</p></div></div></div>  </div>
+
+      <div class="link-wrapper">
+      <ul class="links inline"><li class="node-readmore first last"><a href="/node/226" rel="tag" title="Dolus Tamen Typicus">Read more<span class="element-invisible"> about Dolus Tamen Typicus</span></a></li>
+</ul>    </div>
+  
+  
+</div>
+  </div>
+  <div class="views-row views-row-5 views-row-odd views-row-last">
+    <div id="node-224" class="node node-news node-promoted node-teaser clearfix">
+
+        <h2>
+      <a href="/node/224">Elit Paulatim</a>
+    </h2>
+    
+      <div class="meta submitted">
+            Submitted by <span class="username">Anonymous (not verified)</span> on Tue, 09/29/2015 - 11:03    </div>
+  
+  <div class="content clearfix">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Abico appellatio lobortis vel veniam. Natu neque nibh proprius scisco tamen. Enim tincidunt usitas. Enim gilvus magna os veniam. Cui lobortis luctus macto natu paratus populus valde. Cogo dolor eu inhibeo jumentum metuo natu quis torqueo validus.</p></div></div></div>  </div>
+
+      <div class="link-wrapper">
+      <ul class="links inline"><li class="node-readmore first last"><a href="/node/224" rel="tag" title="Elit Paulatim">Read more<span class="element-invisible"> about Elit Paulatim</span></a></li>
+</ul>    </div>
+  
+  
+</div>
+  </div>
+    </div>
+  
+      <div class="item-list"><ul class="pager pager-load-more"><li class="pager-next first last"><a href="/home?page=1">Load more</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+      
+    </div></div> <!-- /.section, /#content -->
+
+    
+  </div></div> <!-- /#main, /#main-wrapper -->
+
+  
+  <div id="footer-wrapper"><div class="section">
+
+    
+    
+  </div></div> <!-- /.section, /#footer-wrapper -->
+
+</div></div> <!-- /#page, /#page-wrapper -->
+  </body>
+</html>
+
+<!-- Page cached by Boost @ 2015-10-01 20:57:55, expires @ 2015-10-01 21:57:55, lifetime 1 hour -->

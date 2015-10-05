@@ -886,6 +886,7 @@ function module_invoke($module, $hook) {
  */
 function module_invoke_all($hook) {
   $args = func_get_args();
+  dpm($args);
   // Remove $hook from the arguments.
   unset($args[0]);
   $return = array();

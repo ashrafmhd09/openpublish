@@ -278,6 +278,14 @@ function token_field_widget_form_alter(&$element, &$form_state, $context) {
     if (module_exists('i18n_field')) {
       $instance = i18n_string_object_translate('field_instance', $instance);
     }
+    $tokens = token_scan($instance['description']);
+    foreach($tokens as $key => $value) {
+
+    }
+    $options2 = array();
+    $options2 += array('sanitize' => true);
+//    dpm($options2);
+//    exit();
     $element['#description'] = field_filter_xss(token_replace($instance['description']));
   }
 }
